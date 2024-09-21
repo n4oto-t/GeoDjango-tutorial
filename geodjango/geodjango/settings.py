@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
     "world",
 ]
 
@@ -76,11 +77,11 @@ WSGI_APPLICATION = "geodjango.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "sample",  # あなたのデータベース名
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        "NAME": "sample",
         "USER": "postgres",
         "PASSWORD": "postgres",
-        "HOST": "localhost",  # またはDockerを使用している場合はコンテナ名
+        "HOST": "localhost",
         "PORT": "5432",
     }
 }
