@@ -1,5 +1,12 @@
 from django.contrib.gis.db import models
 
+"""
+WorldBorderモデルはshpファイルの構造を見て手動で作成したが、ogrinspectコマンド使えばモデルの作成とLayerMapping用のdict生成を自動化できる。
+
+コマンド
+python manage.py ogrinspect world/data/TM_WORLD_BORDERS-0.3.shp WorldBorder --srid=4326 --mapping --multi
+"""
+
 
 class WorldBorder(models.Model):
     name = models.CharField(max_length=50)
